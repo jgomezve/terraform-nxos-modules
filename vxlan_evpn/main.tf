@@ -14,15 +14,15 @@ provider "nxos" {
   password = "cisco"
   devices = [
     {
-      url  = "https://10.1.17.25"
+      url  = "https://10.0.0.1"
       name = "SPINE-1"
     },
     {
-      url  = "https://10.1.17.24"
+      url  = "https://10.0.0.2"
       name = "SPINE-2"
     },
     {
-      url  = "https://10.1.17.23"
+      url  = "https://10.0.0.1"
       name = "LEAF-1"
     },
     {
