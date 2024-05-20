@@ -9,9 +9,9 @@ terraform {
 }
 
 provider "nxos" {
-  username = "admin"
-  password = "C1sco12345"
-  devices  = var.devices  #fsdf
+  username = "cisco"
+  password = "cisco"
+  devices  = var.devices
 }
 
 

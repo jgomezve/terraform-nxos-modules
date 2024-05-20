@@ -9,8 +9,8 @@ terraform {
 }
 
 provider "nxos" {
-  username = "admin"
-  password = "cisco.123"
+  username = "cisco"
+  password = "cisco"
   devices  = var.devices
 }
 
@@ -25,8 +25,8 @@ resource "nxos_ospf" "ospf_entity" {
 }
 
 resource "nxos_physical_interface" "test_iface" {
-  interface_id             = "eth1/20"
-  layer                    = "Layer3"
+  interface_id = "eth1/20"
+  layer        = "Layer3"
 }
 
 module "nxos_ospf" {
@@ -36,12 +36,12 @@ module "nxos_ospf" {
   name = "OSPFC"
   vrfs = [
     {
-      vrf                     = "default"
-      admin_state             = false
-      bandwidth_reference     = 1000
+      vrf                      = "default"
+      admin_state              = false
+      bandwidth_reference      = 1000
       bandwidth_reference_unit = "gbps"
-      distance                = 120
-      router_id               = "100.1.1.1"
+      distance                 = 120
+      router_id                = "100.1.1.1"
       areas = [
         {
           area = "0.0.0.0"
@@ -70,17 +70,17 @@ module "nxos_ospf" {
           priority              = 100
         },
         {
-            interface = "vlan10"
+          interface = "vlan10"
         }
       ]
     }
   ]
-  depends_on = [ nxos_physical_interface.test_iface, nxos_ospf.ospf_entity , module.nxos_interface_vlan]
+  depends_on = [nxos_physical_interface.test_iface, nxos_ospf.ospf_entity, module.nxos_interface_vlan]
 }
 
 
 module "nxos_interface_vlan" {
-  source  = "git@github.com:netascode/terraform-nxos-interface-vlan.git?ref=main"
+  source = "git@github.com:netascode/terraform-nxos-interface-vlan.git?ref=main"
 
   id           = 10
   admin_state  = true

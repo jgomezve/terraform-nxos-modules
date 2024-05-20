@@ -6,12 +6,12 @@ variable "devices" {
 
   default = [
     {
-      url  = "https://198.18.1.11"
-      name = "SPINE-1"
+      url  = "https://10.0.0.1"
+      name = "SW1"
     },
     {
-      url  = "https://198.18.1.12"
-      name = "SPINE2-2"
+      url  = "https://10.0.0.2"
+      name = "SW2"
     }
   ]
 }

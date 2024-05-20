@@ -12,11 +12,11 @@ provider "nxos" {
   password = "cisco"
   devices = [
     {
-      url  = "https://10.1.17.22"
+      url  = "https://10.0.0.1"
       name = "SW1"
     },
     {
-      url  = "https://10.1.17.23"
+      url  = "https://10.0.0.2"
       name = "SW2"
     }
   ]
